@@ -26,7 +26,7 @@
   "extra": {
     "downsider-puzzle-di": {
       "silktide/syringe": {
-        "path": "config/syringe.json"
+        "path": "config/syringe.yml"
       }
     }
   }
