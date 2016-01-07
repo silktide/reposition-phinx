@@ -1,0 +1,13 @@
+<?php
+
+use {{baseFQCN}}
+
+class {{className}} extends {{baseClass}}
+{
+
+    public function change()
+    {
+        {{tableDefinition}}
+    }
+
+}
