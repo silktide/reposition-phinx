@@ -196,10 +196,11 @@ class MigrationGenerator
             $fieldCode[] = $this->getCodeForField($name, $meta[EntityMetadata::METADATA_FIELD_TYPE]);
         }
 
-        return "
-        \$table = \$this->table('$collection'$tableOptions);
-        " . implode("\n        ", $fieldCode) . "
-        \$table->create();";
+        return "if (!\$this->hasTable('$collection')) {
+            \$table = \$this->table('$collection'$tableOptions);
+            " . implode("\n            ", $fieldCode) . "
+            \$table->create();
+        }";
     }
 
     protected function createMigrationFile($entityClass)
@@ -215,7 +216,7 @@ class MigrationGenerator
         $fileName = Util::mapClassNameToFileName($className);
 
         // create tableDefinitions string
-        $tableDefinition = implode("\n\n        ", $this->tables);
+        $tableDefinition = implode("\n\n            ", $this->tables);
 
         // inject data into the template
         $template = file_get_contents($this->templateFile);
