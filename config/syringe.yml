@@ -1,0 +1,16 @@
+parameters:
+    entityList: []
+    migrationOutputDirectory: ""
+
+services:
+    migrationGenerator:
+        class: Silktide\Reposition\Phinx\MigrationGenerator
+        arguments:
+            - @silktide_reposition.metadataProvider
+            - "%migrationOutputDirectory%"
+
+    generateMigrations.command
+        class: Silktide\Reposition\Phinx\GenerateMigrationsCommand
+        arguments:
+            - "@migrationGenerator"
+            - "%entityList%"
