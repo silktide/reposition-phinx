@@ -1,0 +1,32 @@
+{
+  "name": "silktide/reposition-phinx",
+  "description": "A module for silktide/reposition that creates Phinx SQL database migrations from entity metadata",
+  "license": "MIT",
+  "homepage": "https://github.com/silktide/reposition-phinx",
+  "require": {
+    "php": ">=5.5.0",
+    "silktide/reposition": "^1.4.1",
+    "robmorgan/phinx": "^0.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.*",
+    "mockery/mockery": "0.9.*",
+    "mikey179/vfsStream": "^1.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Silktide\\Reposition\\Phinx\\": "src",
+      "Silktide\\Reposition\\Phinx\\Test\\": "test"
+    }
+  },
+  "suggest": {
+    "downsider/puzzle-di": "Auto configured dependency injection for modules"
+  },
+  "extra": {
+    "downsider-puzzle-di": {
+      "silktide/syringe": {
+        "path": "config/syringe.json"
+      }
+    }
+  }
+}
