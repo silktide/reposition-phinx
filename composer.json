@@ -5,7 +5,7 @@
   "homepage": "https://github.com/silktide/reposition-phinx",
   "require": {
     "php": ">=5.5.0",
-    "silktide/reposition": "^1.4.1",
+    "silktide/reposition": "^1.5.1",
     "robmorgan/phinx": "^0.5",
     "symfony/console": "^2.8"
   },
