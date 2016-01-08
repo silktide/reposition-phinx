@@ -216,7 +216,7 @@ class MigrationGenerator
         $fileName = Util::mapClassNameToFileName($className);
 
         // create tableDefinitions string
-        $tableDefinition = implode("\n\n            ", $this->tables);
+        $tableDefinition = implode("\n\n        ", $this->tables);
 
         // inject data into the template
         $template = file_get_contents($this->templateFile);
