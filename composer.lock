@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0b3b12ce67032d7b82242ac8f2e8049b",
-    "content-hash": "f5076a9b73acbbe118aa7bdbf26acfbb",
+    "hash": "5e6dbc7398605f4f1a5b6a3fe6dacf2f",
+    "content-hash": "d3c19171dbe46a73e602b3d147ee7ba3",
     "packages": [
         {
             "name": "robmorgan/phinx",
@@ -70,16 +70,16 @@
         },
         {
             "name": "silktide/reposition",
-            "version": "1.5.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silktide/reposition.git",
-                "reference": "759fbd7ff0918d11decc52178bd192ba656a0691"
+                "reference": "9baa4a833adf550b6cf41b6ecf82d23d560acba4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silktide/reposition/zipball/759fbd7ff0918d11decc52178bd192ba656a0691",
-                "reference": "759fbd7ff0918d11decc52178bd192ba656a0691",
+                "url": "https://api.github.com/repos/silktide/reposition/zipball/9baa4a833adf550b6cf41b6ecf82d23d560acba4",
+                "reference": "9baa4a833adf550b6cf41b6ecf82d23d560acba4",
                 "shasum": ""
             },
             "require": {
@@ -112,7 +112,7 @@
             ],
             "description": "A modular database abstraction system",
             "homepage": "https://github.com/silktide/reposition",
-            "time": "2015-12-30 18:35:54"
+            "time": "2016-01-08 11:09:43"
         },
         {
             "name": "symfony/config",
@@ -166,26 +166,26 @@
         },
         {
             "name": "symfony/console",
-            "version": "v3.0.1",
+            "version": "v2.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "ebcdc507829df915f4ca23067bd59ee4ef61f6c3"
+                "reference": "2e06a5ccb19dcf9b89f1c6a677a39a8df773635a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/ebcdc507829df915f4ca23067bd59ee4ef61f6c3",
-                "reference": "ebcdc507829df915f4ca23067bd59ee4ef61f6c3",
+                "url": "https://api.github.com/repos/symfony/console/zipball/2e06a5ccb19dcf9b89f1c6a677a39a8df773635a",
+                "reference": "2e06a5ccb19dcf9b89f1c6a677a39a8df773635a",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9",
+                "php": ">=5.3.9",
                 "symfony/polyfill-mbstring": "~1.0"
             },
             "require-dev": {
                 "psr/log": "~1.0",
-                "symfony/event-dispatcher": "~2.8|~3.0",
-                "symfony/process": "~2.8|~3.0"
+                "symfony/event-dispatcher": "~2.1|~3.0.0",
+                "symfony/process": "~2.1|~3.0.0"
             },
             "suggest": {
                 "psr/log": "For using the console logger",
@@ -195,7 +195,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "2.8-dev"
                 }
             },
             "autoload": {
@@ -222,7 +222,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2015-12-22 10:39:06"
+            "time": "2015-12-22 10:25:57"
         },
         {
             "name": "symfony/filesystem",
