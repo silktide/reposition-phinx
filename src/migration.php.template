@@ -1,6 +1,6 @@
 <?php
 
-use {{baseFQCN}}
+use {{baseFQCN}};
 
 class {{className}} extends {{baseClass}}
 {
