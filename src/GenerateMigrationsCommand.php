@@ -17,10 +17,9 @@ class GenerateMigrationsCommand extends Command
 
     protected $entityList;
 
-    public function __construct(MigrationGenerator $generator, array $entityList)
+    public function __construct(MigrationGenerator $generator)
     {
         $this->generator = $generator;
-        $this->entityList = $entityList;
 
         parent::__construct();
     }
@@ -28,28 +27,14 @@ class GenerateMigrationsCommand extends Command
     protected function configure()
     {
         $this->setName("silktide:reposition:generate-migrations")
-            ->setDescription("Create migration files for entities, ready to be migrated using Phinx")
-            ->addArgument("entities", InputArgument::IS_ARRAY, "The list of entities you want to generate migration files for");
+            ->setDescription("Create migration files for entities, ready to be used with Phinx")
+            ->addArgument("entities", InputArgument::IS_ARRAY | InputArgument::REQUIRED, "The list of entities you want to generate migration files for");
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
 
         $entities = $input->getArgument("entities");
-        if (empty($entities)) {
-            $entities = $this->entityList;
-        } else {
-            // parse entities to make sure they are in the list
-            $diff = array_diff($entities, $this->entityList);
-            if (!empty($diff)) {
-                $output->writeln("<error>Unrecognised entities</error>");
-                $output->writeln("<comment>The following entities are not available</comment>");
-                foreach ($diff as $entity) {
-                    $output->writeln("<info>$entity</info>");
-                }
-                return;
-            }
-        }
 
         $counter = 0;
         foreach ($entities as $entity) {

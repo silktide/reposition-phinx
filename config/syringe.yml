@@ -1,5 +1,4 @@
 parameters:
-    entityList: []
     migrationOutputDirectory: ""
 
 services:
@@ -9,8 +8,7 @@ services:
             - @silktide_reposition.metadataProvider
             - "%migrationOutputDirectory%"
 
-    generateMigrations.command
+    generateMigrations.command:
         class: Silktide\Reposition\Phinx\GenerateMigrationsCommand
         arguments:
             - "@migrationGenerator"
-            - "%entityList%"

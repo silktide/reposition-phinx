@@ -35,50 +35,6 @@ class GenerateMigrationsCommandTest extends \PHPUnit_Framework_TestCase
 
     }
 
-    public function testInvalidEntities()
-    {
-        $entityList = [
-            "two",
-            "three"
-        ];
-
-        $requestedEntities = [
-            "one",
-            "three",
-            "four"
-        ];
-
-        $this->inputInterface->shouldReceive("getArgument")->with("entities")->andReturn($requestedEntities);
-
-        $command = new GenerateMigrationsCommand($this->generator, $entityList);
-        $command->run($this->inputInterface, $this->outputInterface);
-
-        $outputCount = count($this->output);
-
-        $this->assertGreaterThan(2, $outputCount, "Check number of output lines greater than 2");
-
-        $lookingFor = [
-            "one" => true,
-            "two" => false,
-            "three" => false,
-            "four" => true
-        ];
-
-        $this->assertContains("Unrecognised", $this->output[0]);
-
-        foreach ($lookingFor as $item => $expected) {
-            $found = false;
-            for($i = 2; $i < $outputCount; ++$i) {
-                if (strpos($this->output[$i], $item) !== false) {
-                    $found = true;
-                    break;
-                }
-            }
-            $this->assertEquals($expected, $found, "Checking if '$item' appears in the output. Should be " . ($expected? "true": "false"));
-        }
-
-    }
-
     /**
      * @dataProvider entityProvider
      *
@@ -86,22 +42,12 @@ class GenerateMigrationsCommandTest extends \PHPUnit_Framework_TestCase
      */
     public function testMigrationsAreGenerated($entities)
     {
-        $entityList = [
-            "one",
-            "two",
-            "three",
-            "four"
-        ];
-
         $this->inputInterface->shouldReceive("getArgument")->with("entities")->andReturn($entities);
 
-        $command = new GenerateMigrationsCommand($this->generator, $entityList);
+        $command = new GenerateMigrationsCommand($this->generator);
         $command->run($this->inputInterface, $this->outputInterface);
 
         $entityCount = count($entities);
-        if (empty($entityCount)) {
-            $entityCount = count($entityList);
-        }
 
         $lastLine = array_pop($this->output);
 
@@ -113,7 +59,7 @@ class GenerateMigrationsCommandTest extends \PHPUnit_Framework_TestCase
         return [
             [["one"]],
             [["two", "three"]],
-            [[]]
+            [["one", "two", "three", "four"]]
         ];
     }
 
