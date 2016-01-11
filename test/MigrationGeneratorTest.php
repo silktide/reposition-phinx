@@ -54,6 +54,7 @@ class MigrationGeneratorTest extends \PHPUnit_Framework_TestCase
      *
      * @param array $fieldList
      * @param array $expectedPatterns
+     * @param array $unexpectedPatterns
      * @param string $primaryKey
      */
     public function testProcessingFields(array $fieldList, array $expectedPatterns, array $unexpectedPatterns = [], $primaryKey = "id")
