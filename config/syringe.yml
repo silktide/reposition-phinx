@@ -5,7 +5,7 @@ services:
     migrationGenerator:
         class: Silktide\Reposition\Phinx\MigrationGenerator
         arguments:
-            - @silktide_reposition.metadataProvider
+            - "@silktide_reposition.metadataProvider"
             - "%migrationOutputDirectory%"
 
     generateMigrations.command:
