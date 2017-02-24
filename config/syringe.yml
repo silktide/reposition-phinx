@@ -1,5 +1,6 @@
 parameters:
     migrationOutputDirectory: ""
+    configurationOutputDirectory: ""
 
 services:
     migrationGenerator:
@@ -12,3 +13,18 @@ services:
         class: Silktide\Reposition\Phinx\GenerateMigrationsCommand
         arguments:
             - "@migrationGenerator"
+        tags:
+            - "console.command"
+
+    initialisePhinx.command:
+        class: Silktide\Reposition\Phinx\InitialisePhinxCommand
+        arguments:
+            - "%configurationOutputDirectory%"
+            - "%migrationOutputDirectory%"
+            - "%silktide_reposition-sql.dbDriver%"
+            - "%silktide_reposition-sql.dbHost%"
+            - "%silktide_reposition-sql.dbName%"
+            - "%silktide_reposition-sql.dbUsername%"
+            - "%silktide_reposition-sql.dbPassword%"
+        tags:
+            - "console.command"
