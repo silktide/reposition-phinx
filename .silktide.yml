@@ -1,4 +1,6 @@
 ---
+app: reposition-phinx
 type: library
 source: open
+language: php
 ...
